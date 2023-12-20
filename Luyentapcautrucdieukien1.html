@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 >Bài 1</h1>
+<input type="number" id="a" placeholder="nhập số : " >
+<input type="number" id="b" placeholder="nhập số : " >
+<button onClick="ifdk()" >kiểm tra </button>
+<h1 id='ifdk'></h1>
+<script>
+    function ifdk(){
+        let a= document.getElementById('a').value;
+        let b= document.getElementById('b').value;
+        if(a%b===0){
+            document.getElementById('ifdk').innerHTML= "kết quả:"+ a+"chia hết cho "+ b;
+        }else {
+            document.getElementById('ifdk').innerHTML = "kết quả:"+ a+"không chia hết cho "+ b;
+
+        }
+    }
+
+</script>
+<h1>Bài 2</h1>
+<input type="text" id="c" placeholder="nhập số tuổi " >
+<button onClick="ifdk1()" >kiểm tra </button>
+<h1 id='ifdk1'></h1>
+<script>
+    function ifdk1(){
+        let c=document.getElementById('c').value;
+        if(c>15) {
+            document.getElementById('ifdk1').innerHTML= "Bạn đủ tuổi vào lớp 10 :";
+        }else{
+            document.getElementById('ifdk1').innerHTML= "Bạn không đủ tuổi vào lớp 10 bạn thiếu " + (15-c)+" tuổi";
+             }
+
+    }
+
+</script>
+<h1> Bài 3</h1>
+<input type="number" id="d" placeholder="nhập số nguyên " >
+<button onClick="ifdk2()" >kiểm tra </button>
+<h1 id='ifdk2'></h1>
+<script>
+    function ifdk2(){
+        let d=document.getElementById('d').value;
+        if(c>0) {
+            document.getElementById('ifdk2').innerHTML= "Số này lớn hơn 0 :";
+        }else{
+            document.getElementById('ifdk2').innerHTML= "Số này nhỏ hơn 0 ";
+        }
+</script>
+
+<h1>Bài 4</h1>
+<input type="number" id="e" placeholder="nhập số thứ nhất " >
+<input type="number" id="f" placeholder="nhập số thứ hai  " >
+<input type="number" id="g" placeholder="nhập số thứ ba   " >
+<button onClick="ifdk3()" >kiểm tra </button>
+<h1 id='ifdk3'></h1>
+
+<script>
+    function ifdk3() {
+        let e =  document.getElementById('e').value;
+        let f =  document.getElementById('f').value;
+        let g =  document.getElementById('g').value;
+        let max = e;
+        if (f > max) {
+            max = f;
+            document.getElementById('ifdk3').innerHTML = "Số "+f+" lớn nhất ";
+        }
+        if (g > max) {
+            max = g;
+            document.getElementById('ifdk3').innerHTML = "Số "+g+" lớn nhất ";
+        }
+    }
+
+</script>
+<h1>Bài 5</h1>
+<input type="number" id="t" placeholder="Điểm kiểm tra thường xuyên: " >
+<input type="number" id="m" placeholder="Điểm kiểm tra giữa kỳ:  " >
+<input type="number" id="l" placeholder="Điểm kiểm tra cuối kỳ:  " >
+<button onClick="ifdk4()" >kiểm tra </button>
+<h1 id='ifdk4'></h1>
+<script>
+    function ifdk4(){
+        let t = parseFloat(document.getElementById('t').value);
+        let m = parseFloat(document.getElementById('m').value);
+        let l = parseFloat(document.getElementById('l').value);
+        let tongdiem=(t+(m*2)+(l*3))/6;
+        if (tongdiem >=8) {
+            document.getElementById('ifdk4').innerHTML ="học sinh giỏi với số điểm "+tongdiem;
+        }
+        if (tongdiem<8 && tongdiem>=5) {
+
+            document.getElementById('ifdk4').innerHTML = "học sinh khá với số điểm "+tongdiem;
+        }
+        if (tongdiem<=5) {
+
+            document.getElementById('ifdk4').innerHTML = "học sinh yếu với số điểm "+tongdiem;
+        }
+    }
+
+</script>
+<h1>Bài 6</h1>
+<input type="number" id="ds" placeholder="Nhập doanh số: " >
+<button onClick="ifdk5()" >kiểm tra </button>
+<h1 id='ifdk5'></h1>
+<script>
+    function ifdk5(){
+        let ds = parseFloat(document.getElementById('ds').value);
+
+        if (ds >=8) {
+            document.getElementById('ifdk5').innerHTML ="Bạn được thưởng 5$ ";
+        }
+        if (ds<8 && ds>=5) {
+
+            document.getElementById('ifdk5').innerHTML = "Bạn được thưởng 3$ ";
+        }
+        if (ds<=5) {
+
+            document.getElementById('ifdk5').innerHTML = "Bạn được thưởng 1$ ";
+        }
+
+
+    }
+
+</script>
+
+<h1>Bài 6</h1>
+<input type="number" id="giacuoc" placeholder="Giá cước cơ bản (VND/phút):">
+<input type="number" id="sophut" placeholder="Số phút gọi:">
+<input type="number" id="sotinnhan" placeholder="Số tin nhắn:">
+<button onClick="tinhCuoc()">Tính</button>
+<h1 id="tinhcuoc"></h1>
+
+<script>
+    function tinhCuoc() {
+        let giacuoc = parseFloat(document.getElementById('giacuoc').value);
+        let sophut = parseInt(document.getElementById('sophut').value);
+        let sotinnhan = parseInt(document.getElementById('sotinnhan').value);
+
+        let cuocGoi = giacuoc * sophut;
+        let cuocTinNhan = sotinnhan * 200;
+
+        let tongCuoc = cuocGoi + cuocTinNhan;
+
+        document.getElementById('tinhcuoc').innerHTML = "Tổng cước điện thoại: " + tongCuoc + " VND";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>

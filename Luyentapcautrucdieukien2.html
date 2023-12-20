@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bài 6</h1>
+<input type="number" id="a" placeholder="Nhập hệ số a:">
+<input type="number" id="b" placeholder="Nhập hệ số b:">
+<button onClick="giaiPT()">Giải</button>
+<h1 id="ketqua6"></h1>
+
+<script>
+    function giaiPT() {
+        let a = parseFloat(document.getElementById('a').value);
+        let b = parseFloat(document.getElementById('b').value);
+
+        if (a === 0) {
+            if (b === 0) {
+                document.getElementById('ketqua6').innerHTML = "Phương trình vô số nghiệm";
+            } else {
+                document.getElementById('ketqua6').innerHTML = "Phương trình vô nghiệm";
+            }
+        } else {
+            let x = -b / a;
+            document.getElementById('ketqua').innerHTML = "Nghiệm của phương trình: x = " + x;
+        }
+    }
+ </script>
+<h1>Bài 7</h1>
+<input type="number" id="d" placeholder="Nhập hệ số 1:">
+<input type="number" id="e" placeholder="Nhập hệ số 2:">
+<input type="number" id="f" placeholder="Nhập hệ số 3:">
+<button onClick="giaiPT1()">Giải</button>
+<h1 id="ketqua7"></h1>
+
+<script>
+    function giaiPT1() {
+        let d = parseFloat(document.getElementById('d').value);
+        let e = parseFloat(document.getElementById('e').value);
+        let f = parseFloat(document.getElementById('f').value);
+
+        let delta = e * e - 4 * d * f;
+
+        if (delta < 0) {
+            document.getElementById('ketqua7').innerHTML = "Phương trình vô nghiệm";
+        } else if (delta === 0) {
+            let x = -e / (2 * d);
+            document.getElementById('ketqua7').innerHTML = "Phương trình có nghiệm kép: x = " + x;
+        } else {
+            let x1 = (-e + Math.sqrt(delta)) / (2 * d);
+            let x2 = (-e - Math.sqrt(delta)) / (2 * d);
+            document.getElementById('ketqua7').innerHTML = "Nghiệm của phương trình: x1 = " + x1 + ", x2 = " + x2;
+        }
+    }
+</script>
+<h1>Bài 8</h1>
+<input type="number" id="tuoi" placeholder="Nhập tuổi:">
+<button onClick="kiemtratuoi()">Kiểm tra</button>
+<h1 id="ketqua8"></h1>
+
+<script>
+    function kiemtratuoi() {
+        let tuoi = parseInt(document.getElementById('tuoi').value);
+
+        if (tuoi > 0 && tuoi <= 120) {
+            document.getElementById('ketqua8').innerHTML = "Đây là tuổi của một người.";
+        } else {
+            document.getElementById('ketqua8').innerHTML = "Đây không phải là tuổi của một người.";
+        }
+    }
+</script>
+<h1>Bài 9</h1>
+<input type="number" id="l" placeholder="Nhập cạnh a"><br>
+<input type="number" id="n" placeholder="Nhập cạnh b"><br>
+<input type="number" id="t" placeholder="Nhập cạnh c"><br>
+<button onClick="kiemtratamgiac()">Kiểm tra</button>
+<h1 id="ketqua9"></h1>
+
+<script>
+    function kiemtratamgiac() {
+        let l = parseFloat(document.getElementById('l').value);
+        let n = parseFloat(document.getElementById('n').value);
+        let t = parseFloat(document.getElementById('t').value);
+
+        if (l > 0 && n > 0 && t > 0 && (l + n > t) && (n + t > l) && (l + t > n)) {
+            document.getElementById('ketqua9').innerHTML = "Đây là độ dài các cạnh của một tam giác.";
+        } else {
+            document.getElementById('ketqua9').innerHTML = "Đây không phải là độ dài các cạnh của một tam giác.";
+        }
+    }
+</script>
+<h1>Bài 10 </h1>
+<input type="number" id="soDien" placeholder="Nhập số điện tiêu thụ"><br>
+<button onClick="tinhgiadien()">Tính</button>
+<h1 id="ketqua10"></h1>
+
+<script>
+    function tinhgiadien() {
+        let soDien = parseFloat(document.getElementById('soDien').value);
+        let giaDien = 0;
+
+        if (soDien <= 50) {
+            giaDien = soDien * 1000;
+        } else if (soDien <= 100) {
+            giaDien = 50 * 1000 + (soDien - 50) * 1500;
+        } else {
+            giaDien = 50 * 1000 + 50 * 1500 + (soDien - 100) * 2000;
+        }
+
+        document.getElementById('ketqua10').innerHTML = "Giá điện: " + giaDien + " đồng";
+    }
+</script>
+<h1>Bài 11</h1>
+<input type="number" id="thuNhap" placeholder="Nhập thu nhập hàng tháng"><br>
+<button onClick="tinhthue()">Tính</button>
+<h1 id="ketqua11"></h1>
+
+<script>
+    function tinhthue() {
+        let thuNhap = parseFloat(document.getElementById('thuNhap').value);
+        let thue = 0;
+        if (thuNhap <= 5000000) {
+            thue = thuNhap * 5 / 100;
+        } else if (thuNhap <= 10000000) {
+            thue = 5000000 * 5 / 100 + (thuNhap - 5000000) * 10 / 100;
+        } else {
+            thue = 5000000 * 5 / 100 + 5000000 * 10 / 100 + (thuNhap - 10000000) * 15 / 100;
+        }
+
+        document.getElementById('ketqua11').innerHTML = "Thuế thu nhập cá nhân: " + thue + " VNĐ";
+    }
+</script>
+<h1> Bài 12 </h1>
+<input type="number" id="soTien" placeholder="Nhập số tiền ban đầu"><br>
+<input type="number" id="soThang" placeholder="Nhập số tháng cho vay"><br>
+<input type="number" id="laiXuat" placeholder="Nhập lãi xuất hàng tháng"><br>
+<button onClick="tinhlai()">Tính</button>
+<h1 id="ketqua12"></h1>
+
+<script>
+    function tinhlai() {
+        let soTien = parseFloat(document.getElementById('soTien').value);
+        let soThang = parseInt(document.getElementById('soThang').value);
+        let laiXuat = parseFloat(document.getElementById('laiXuat').value);
+
+        let laiXuatDec = laiXuat / 100;
+        let soTienCuoi = soTien * Math.pow(1 + laiXuatDec, soThang);
+
+        document.getElementById('ketqua12').innerHTML = "Số tiền cuối cùng: " + soTienCuoi.toFixed(2) + " VNĐ";
+    }
+</script>
+
+
+
+</body>
+</html>
